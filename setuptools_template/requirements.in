@@ -1,0 +1,7 @@
+# Project Dependencies go here
+# 1) Install pip tools if you don't already have it 
+# $ pip install pip-tools 
+# 2) Then compile a new requirements.txt file using the requirements.in file with
+# $ pip-compile -o requirements.txt
+
+numpy
