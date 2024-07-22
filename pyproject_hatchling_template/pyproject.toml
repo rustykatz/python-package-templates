@@ -1,0 +1,50 @@
+[project]
+name = "pyproject-hatchling-package"
+description = "some description"
+version = "0.0.1"
+readme = "README.md"
+requires-python = ">=3.11"
+license = { file = "LICENSE.txt" }
+authors = [
+    {name = "me", email = "example@domain.com"}
+]
+maintainers = [
+    {name = "me", email = "example@domain.com"}
+]
+dependencies = [
+    "numpy"
+]
+
+[project.optional-dependencies]
+# Install using 
+# $ pip install pyproject_hatchling_package[dev]
+dev = [
+    "pytest"
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+# Configures the source distribution (sdist) build target, specifying which files to include.
+[tool.hatch.build.targets.sdist]
+include = ["pyproject_hatchling_package/**"]
+
+# Configures the wheel distribution build target, specifying which files to include.
+[tool.hatch.build.targets.wheel]
+include = ["pyproject_hatchling_package/**"]
+
+# Configures the default environment for the project, specifying dependencies and other settings.
+# matrix key inherits dependencies from [project] section
+[tool.hatch.envs.default]
+matrix = { dependencies = true }
+
+[project.urls]
+"Homepage" = "https://github.com/rustykatz/python-package-templates"
+
+# Provides a command line executable with the same name as the key. I.e `cli_command`
+# When invoked in command line, it runs  the function `main` from this package
+# i.e. $ cli_command
+# < Output from main() inside pyproject_hatchling_package.main > 
+[project.scripts]
+cli_command = "pyproject_hatchling_package.main:main"
