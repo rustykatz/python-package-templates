@@ -1,0 +1,40 @@
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
+
+[project]
+name = "pyproject-package"
+description = "some description"
+version = "0.0.1"
+readme = "README.md"
+requires-python = ">=3.11"
+license = { file = "LICENSE.txt" }
+authors = [
+    {name = "me", email = "example@domain.com"}
+]
+maintainers = [
+    {name = "me", email = "example@domain.com"}
+]
+dependencies = [
+    "numpy"
+]
+
+
+[project.optional-dependencies]
+# Install using 
+# $ pip install pyproject_package[dev]
+dev = [
+    "pytest"
+]
+
+
+[project.urls]
+"Homepage" = "https://github.com/rustykatz/python-package-templates"
+
+# Provides a command line executable with the same name as the key. I.e `cli_command`
+# When invoked in command line, it runs  the function `main` from this package
+# i.e. $ cli_command
+# < Output from main() inside pyproject_package.main > 
+[project.scripts]
+cli_command = "pyproject_package.main:main"
