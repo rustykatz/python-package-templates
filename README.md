@@ -9,6 +9,8 @@ This repository contains three sample project templates to help you get started 
 `pyproject_setuptools_template` -> uses the setuptools build backend <br>
 `pyproject_hatchling_template` -> uses the hatchling build backend 
 
+A cool feature of using `pyproject.toml` is the [project.scripts] section. Under this section, you can specify CLI commands that invoke specified functions from the package. 
+
 ## Running Tests <a name="tests"></a>
 Tests can be run using the bash script inside the `./tests` folder
 ```bash
