@@ -1,5 +1,3 @@
-
-
 from setuptools_package.module import module_fxn
 from setuptools_package.nested_package.nested_module import nested_module_fxn
 
